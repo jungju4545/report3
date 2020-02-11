@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.script.script.repository.CompanyRepository">
+
+<insert id ="save">
+INSERT INTO company(url, title, createTime, type)
+VALUES(#{url},#{title},now(),3)
+</insert>
+
+<select id ="findAll" resultType="com.script.script.model.Company">
+select DISTINCT * from company
+</select>
+
+<delete id = "delete">
+DELETE FROM company
+</delete>
+</mapper>
